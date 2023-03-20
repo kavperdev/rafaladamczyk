@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cost Calculator</title>
+	<style type="text/css">
+		body {
+			background-color: black;
+			color: white;
+			font-size: 24px;
+			text-align: center;
+		}
+		input {
+			background-color: #333;
+			color: white;
+			padding: 10px;
+			margin: 10px;
+			border: none;
+		}
+		button {
+			background-color: #555;
+			color: white;
+			padding: 10px;
+			margin: 10px;
+			border: none;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<form>
+		<h1>Cost Calculator</h1>
+		<label for="wall">Wall painting:</label>
+		<input type="number" name="wall" id="wall"><br>
+		<label for="tiles">Tiles:</label>
+		<input type="number" name="tiles" id="tiles"><br>
+		<button type="button" onclick="calculate()">Calculate</button><br><br>
+		<label for="result">Total cost:</label>
+		<input type="text" name="result" id="result" disabled><br>
+	</form>
+	<script>
+		function calculate() {
+			var wall = Number(document.getElementById("wall").value);
+			var tiles = Number(document.getElementById("tiles").value);
+			var result = wall * 12 + tiles * 20;
+			document.getElementById("result").value = result.toFixed(2) + " PLN";
+		}
+	</script>
+</body>
+</html>
